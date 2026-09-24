@@ -1,0 +1,21 @@
+name: aidlc-planner
+
+services:
+  aidlc-planner:
+    build: .
+    image: aidlc-planner:local
+    ports:
+      - "${AIDLC_PORT:-3000}:3000"
+    volumes:
+      - ./data:/data
+    environment:
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      COOKIE_SECURE: ${COOKIE_SECURE:-0}
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped

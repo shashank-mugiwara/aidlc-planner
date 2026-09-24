@@ -1,0 +1,9 @@
+node_modules
+dist
+data
+.git
+test-results
+playwright-report
+coverage
+.env
+*.sqlite*

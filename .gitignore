@@ -1,0 +1,11 @@
+node_modules/
+dist/
+data/
+.env
+test-results/
+playwright-report/
+coverage/
+.e2e-data/
+*.sqlite*
+.DS_Store
+artifacts/*.tar.gz
